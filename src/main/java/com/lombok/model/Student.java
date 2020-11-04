@@ -22,4 +22,7 @@ public class Student {
 
     @Column
     private Date dateOfBirth;
+    
+    @ManyToMany
+    private List<Class> classes;
 }
