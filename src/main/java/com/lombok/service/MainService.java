@@ -45,7 +45,7 @@ public class MainService {
             st1.setFirstName("Mutlu");
             st1.setLastName("Eren");
             st1.setDateOfBirth(parseDate("1995-03-02"));
-            str.setClasses(classList);
+            st1.setClasses(classList);
             studentRepository.save(st1);
 
             Teacher t1 = new Teacher();
