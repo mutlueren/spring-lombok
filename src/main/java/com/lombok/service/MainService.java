@@ -37,26 +37,31 @@ public class MainService {
     public void generateManual(){
 
         try {
+            ArrayList<Class> classList = new ArrayList<>();
+            ArrayList<Teacher> teacherList = new ArrayList<>();
+            ArrayList<Student> studentList = new ArrayList<>();
+            
             Student st1 = new Student();
             st1.setFirstName("Mutlu");
             st1.setLastName("Eren");
             st1.setDateOfBirth(parseDate("1995-03-02"));
+            str.setClasses(classList);
             studentRepository.save(st1);
 
             Teacher t1 = new Teacher();
             t1.setFirstName("Mehmet Ali");
             t1.setLastName("Tuysuz");
             t1.setDateOfBirth(parseDate("1970-01-01"));
+            t1.setClasses(classList);
             teacherRepository.save(t1);
 
             Class c1 = new Class();
             c1.setCode("CEN400");
-            List<Teacher> teacherList = new ArrayList<>();
             teacherList.add(t1);
             c1.setTeachers(teacherList);
-            List<Student> studentList = new ArrayList<>();
             studentList.add(st1);
             c1.setStudents(studentList);
+            classList.add(c1);
             classRepository.save(c1);
 
             School sh1 = new School();
