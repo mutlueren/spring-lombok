@@ -18,9 +18,9 @@ public class Class {
     @Column
     private String code;
 
-    @OneToMany
+    @ManyToMany
     private List<Student> students;
 
-    @OneToMany
+    @ManyToMany
     private List<Teacher> teachers;
 }
